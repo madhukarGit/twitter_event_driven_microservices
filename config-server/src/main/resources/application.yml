@@ -6,7 +6,6 @@ logging:
     ROOT: INFO
     org.spring.framework.cloud.config: DEBUG
 
-
 spring:
   application:
     name: configserver
@@ -14,16 +13,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/agelenler/spring-cloud-config-server-repository
+          uri: https://github.com/madhukarGit/spring-cloud-config-server-repository
           default-label: main
-          username: ****
-          password: '****'
+          username: hmkaws428@gmail.com
+          password: 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
           clone-on-start: true
     fail-fast: true
-  security:
-    user:
-      name: spring_cloud_user
-      password: '1234'
-
-log:
-  app-name: config-server

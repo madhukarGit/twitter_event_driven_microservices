@@ -11,6 +11,8 @@
 		<module>kafka/kafka-producer</module>
 		<module>common-config</module>
         <module>config-server</module>
+        <module>kafka/kafka-consumer</module>
+        <module>kafka-to-elastic-service</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -153,7 +155,11 @@
 				<version>${avro.version}</version>
 			</dependency>
 
-
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>kafka-consumer</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 			<dependency>
 				<groupId>io.confluent</groupId>
 				<artifactId>kafka-avro-serializer</artifactId>
