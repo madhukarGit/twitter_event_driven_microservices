@@ -10,7 +10,8 @@
 		<module>kafka/kafka-admin</module>
 		<module>kafka/kafka-producer</module>
 		<module>common-config</module>
-	</modules>
+        <module>config-server</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -34,6 +35,8 @@
 		<lombok.version>1.18.30</lombok.version>
 		<avro.version>1.11.2</avro.version>
 		<kafka-avro-serializer.version>7.4.0</kafka-avro-serializer.version>
+		<spring-cloud.version>4.0.3</spring-cloud.version>
+		<spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
 	</properties>
 
 	<repositories>
@@ -61,6 +64,7 @@
 				<artifactId>kafka-model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>kafka-admin</artifactId>
@@ -72,6 +76,24 @@
 				<version>${project.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-config-server</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>config-server</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter</artifactId>
@@ -89,7 +111,11 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-config</artifactId>
+				<version>4.0.3</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.kafka</groupId>
 				<artifactId>spring-kafka</artifactId>
